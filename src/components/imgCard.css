@@ -1,0 +1,9 @@
+.img_prop {
+    width: 100%;
+    height: calc((100vw /3) - 24px);
+    object-fit: cover;
+}
+.title_wrapper {
+    display: flex;
+    justify-content: space-between;
+}

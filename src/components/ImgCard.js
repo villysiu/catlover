@@ -1,18 +1,21 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-
-const ImgCard = ({imgData}) =>{
-    
+import { Heart, HeartFill } from 'react-bootstrap-icons';
+const ImgCard = ({cat}) =>{
+console.log(cat)
     return(
-        <Card style={{ width: '100%' }}>
-            <Card.Img variant="top" src="holder.js/100px180" />
+        <Card>
+            <Card.Img variant="top" className="img_prop" src={cat.url} />
             <Card.Body>
-                <Card.Title>Card Title</Card.Title>
+                <div className='title_wrapper'>
+                    <Card.Title >{cat.breeds[0].name}</Card.Title>
+                    <Heart color="red" size={25} />
+                </div>
+                    
                 <Card.Text>
-                Some quick example text to build on the card title and make up the
-                bulk of the card's content.
+                    {cat.breeds[0].description}
                 </Card.Text>
-                <Button variant="primary">Go somewhere</Button>
+                
             </Card.Body>
         </Card>
     )

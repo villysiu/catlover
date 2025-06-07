@@ -1,3 +1,7 @@
+import ImgCard from './ImgCard'
+import { Row, Col } from 'react-bootstrap';
+import {useState} from 'react';
+
 const Favorites = () => {
     
     const [favorites, setFavorites] = useState([]);

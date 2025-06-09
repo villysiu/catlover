@@ -1,8 +1,7 @@
 
 import './App.css';
 import NavBar from './components/NavBar';
-import Random from './components/Random';
-import Favorites from './components/Favorites';
+import MainBody from './components/MainBody';
 import React, { useState } from 'react';
 
 const App = () => {
@@ -12,9 +11,7 @@ const App = () => {
 
       <NavBar setChoice={setChoice}/>
       <div className="main">
-        { choice === 1 ?  <Favorites /> : <Random  /> }
-          
-          
+        <MainBody choice={choice} />
       </div>
     </div>
   );

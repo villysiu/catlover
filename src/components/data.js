@@ -195,7 +195,11 @@ export const randomData = [
 		"id": "POPfuPq8t",
 		"url": "https://cdn2.thecatapi.com/images/POPfuPq8t.jpg",
 		"width": 1024,
-		"height": 768
+		"height": 768,
+		"favourite": {
+			"message": "SUCCESS",
+			"id": 232535969
+		},
 	},
 	{
 		"breeds": [
@@ -588,21 +592,65 @@ export const randomData = [
 		"url": "https://cdn2.thecatapi.com/images/DYOqsRy9f.jpg",
 		"width": 1080,
 		"height": 720
-	}
+	},
+	{
+	"id": "r_njVlaSz",
+	"url": "https://cdn2.thecatapi.com/images/r_njVlaSz.jpg",
+	"breeds": [
+		{
+			"weight": {
+				"imperial": "7 - 16",
+				"metric": "3 - 7"
+			},
+			"id": "abob",
+			"name": "American Bobtail",
+			"cfa_url": "http://cfa.org/Breeds/BreedsAB/AmericanBobtail.aspx",
+			"vetstreet_url": "http://www.vetstreet.com/cats/american-bobtail",
+			"vcahospitals_url": "https://vcahospitals.com/know-your-pet/cat-breeds/american-bobtail",
+			"temperament": "Intelligent, Interactive, Lively, Playful, Sensitive",
+			"origin": "United States",
+			"country_codes": "US",
+			"country_code": "US",
+			"description": "American Bobtails are loving and incredibly intelligent cats possessing a distinctive wild appearance. They are extremely interactive cats that bond with their human family with great devotion.",
+			"life_span": "11 - 15",
+			"indoor": 0,
+			"lap": 1,
+			"alt_names": "",
+			"adaptability": 5,
+			"affection_level": 5,
+			"child_friendly": 4,
+			"dog_friendly": 5,
+			"energy_level": 3,
+			"grooming": 1,
+			"health_issues": 1,
+			"intelligence": 5,
+			"shedding_level": 3,
+			"social_needs": 3,
+			"stranger_friendly": 3,
+			"vocalisation": 3,
+			"experimental": 0,
+			"hairless": 0,
+			"natural": 0,
+			"rare": 0,
+			"rex": 0,
+			"suppressed_tail": 1,
+			"short_legs": 0,
+			"wikipedia_url": "https://en.wikipedia.org/wiki/American_Bobtail",
+			"hypoallergenic": 0,
+			"reference_image_id": "hBXicehMA"
+		}
+	],
+	"width": 1920,
+	"height": 1080,
+	"favourite": {
+		"message": "SUCCESS",
+		"id": 232535965
+	},
+
+}
 ]
 
 export const favData = [
-	{
-		"id": 232535965,
-		"user_id": "swqp91",
-		"image_id": "r_njVlaSz",
-		"sub_id": null,
-		"created_at": "2025-06-06T19:31:55.000Z",
-		"image": {
-			"id": "r_njVlaSz",
-			"url": "https://cdn2.thecatapi.com/images/r_njVlaSz.jpg"
-		}
-	},
 	{
 		"id": 232535969,
 		"user_id": "swqp91",
@@ -612,6 +660,248 @@ export const favData = [
 		"image": {
 			"id": "POPfuPq8t",
 			"url": "https://cdn2.thecatapi.com/images/POPfuPq8t.jpg"
+		}
+	},
+	{
+		"id": 232536070,
+		"user_id": "swqp91",
+		"image_id": "OhTkBTPnD",
+		"sub_id": null,
+		"created_at": "2025-06-09T19:18:10.000Z",
+		"image": {
+			"id": "OhTkBTPnD",
+			"url": "https://cdn2.thecatapi.com/images/OhTkBTPnD.jpg"
+		}
+	},
+	{
+		"id": 232536071,
+		"user_id": "swqp91",
+		"image_id": "OCoeP14wW",
+		"sub_id": null,
+		"created_at": "2025-06-09T19:21:21.000Z",
+		"image": {
+			"id": "OCoeP14wW",
+			"url": "https://cdn2.thecatapi.com/images/OCoeP14wW.jpg"
+		}
+	},
+	{
+		"id": 232536072,
+		"user_id": "swqp91",
+		"image_id": "uvt2Psd9O",
+		"sub_id": null,
+		"created_at": "2025-06-09T19:23:31.000Z",
+		"image": {
+			"id": "uvt2Psd9O",
+			"url": "https://cdn2.thecatapi.com/images/uvt2Psd9O.jpg"
+		}
+	},
+	{
+		"id": 232536073,
+		"user_id": "swqp91",
+		"image_id": "uvyjW5KIG",
+		"sub_id": null,
+		"created_at": "2025-06-09T19:25:05.000Z",
+		"image": {
+			"id": "uvyjW5KIG",
+			"url": "https://cdn2.thecatapi.com/images/uvyjW5KIG.jpg"
+		}
+	},
+	{
+		"id": 232536074,
+		"user_id": "swqp91",
+		"image_id": "nwrkX6GhX",
+		"sub_id": null,
+		"created_at": "2025-06-09T19:25:29.000Z",
+		"image": {
+			"id": "nwrkX6GhX",
+			"url": "https://cdn2.thecatapi.com/images/nwrkX6GhX.jpg"
+		}
+	},
+	{
+		"id": 232536075,
+		"user_id": "swqp91",
+		"image_id": "hz0fwFell",
+		"sub_id": null,
+		"created_at": "2025-06-09T19:25:39.000Z",
+		"image": {
+			"id": "hz0fwFell",
+			"url": "https://cdn2.thecatapi.com/images/hz0fwFell.jpg"
+		}
+	},
+	{
+		"id": 232536076,
+		"user_id": "swqp91",
+		"image_id": "oIkRTUZnt",
+		"sub_id": null,
+		"created_at": "2025-06-09T19:25:40.000Z",
+		"image": {
+			"id": "oIkRTUZnt",
+			"url": "https://cdn2.thecatapi.com/images/oIkRTUZnt.jpg"
+		}
+	},
+	{
+		"id": 232536077,
+		"user_id": "swqp91",
+		"image_id": "nG2rFqXai",
+		"sub_id": null,
+		"created_at": "2025-06-09T19:25:43.000Z",
+		"image": {
+			"id": "nG2rFqXai",
+			"url": "https://cdn2.thecatapi.com/images/nG2rFqXai.jpg"
+		}
+	},
+	{
+		"id": 232536078,
+		"user_id": "swqp91",
+		"image_id": "4MEAQffKS",
+		"sub_id": null,
+		"created_at": "2025-06-09T19:25:44.000Z",
+		"image": {
+			"id": "4MEAQffKS",
+			"url": "https://cdn2.thecatapi.com/images/4MEAQffKS.jpg"
+		}
+	},
+	{
+		"id": 232536079,
+		"user_id": "swqp91",
+		"image_id": "mZZzMlywy",
+		"sub_id": null,
+		"created_at": "2025-06-09T19:25:45.000Z",
+		"image": {
+			"id": "mZZzMlywy",
+			"url": "https://cdn2.thecatapi.com/images/mZZzMlywy.jpg"
+		}
+	},
+	{
+		"id": 232536080,
+		"user_id": "swqp91",
+		"image_id": "Y4YIOqGKb",
+		"sub_id": null,
+		"created_at": "2025-06-09T19:25:47.000Z",
+		"image": {
+			"id": "Y4YIOqGKb",
+			"url": "https://cdn2.thecatapi.com/images/Y4YIOqGKb.jpg"
+		}
+	},
+	{
+		"id": 232536081,
+		"user_id": "swqp91",
+		"image_id": "8pCFG7gCV",
+		"sub_id": null,
+		"created_at": "2025-06-09T19:26:54.000Z",
+		"image": {
+			"id": "8pCFG7gCV",
+			"url": "https://cdn2.thecatapi.com/images/8pCFG7gCV.jpg"
+		}
+	},
+	{
+		"id": 232536082,
+		"user_id": "swqp91",
+		"image_id": "_7U4xGLO_",
+		"sub_id": null,
+		"created_at": "2025-06-09T19:26:55.000Z",
+		"image": {
+			"id": "_7U4xGLO_",
+			"url": "https://cdn2.thecatapi.com/images/_7U4xGLO_.jpg"
+		}
+	},
+	{
+		"id": 232536083,
+		"user_id": "swqp91",
+		"image_id": "udZiLDG_E",
+		"sub_id": null,
+		"created_at": "2025-06-09T19:27:14.000Z",
+		"image": {
+			"id": "udZiLDG_E",
+			"url": "https://cdn2.thecatapi.com/images/udZiLDG_E.jpg"
+		}
+	},
+	{
+		"id": 232536084,
+		"user_id": "swqp91",
+		"image_id": "A5JigBZjG",
+		"sub_id": null,
+		"created_at": "2025-06-09T19:27:28.000Z",
+		"image": {
+			"id": "A5JigBZjG",
+			"url": "https://cdn2.thecatapi.com/images/A5JigBZjG.jpg"
+		}
+	},
+	{
+		"id": 232536085,
+		"user_id": "swqp91",
+		"image_id": "kOAHCDEzA",
+		"sub_id": null,
+		"created_at": "2025-06-09T19:27:29.000Z",
+		"image": {
+			"id": "kOAHCDEzA",
+			"url": "https://cdn2.thecatapi.com/images/kOAHCDEzA.jpg"
+		}
+	},
+	{
+		"id": 232536086,
+		"user_id": "swqp91",
+		"image_id": "aU69p2mTT",
+		"sub_id": null,
+		"created_at": "2025-06-09T19:27:30.000Z",
+		"image": {
+			"id": "aU69p2mTT",
+			"url": "https://cdn2.thecatapi.com/images/aU69p2mTT.jpg"
+		}
+	},
+	{
+		"id": 232536087,
+		"user_id": "swqp91",
+		"image_id": "yPmEpKmnR",
+		"sub_id": null,
+		"created_at": "2025-06-09T19:28:10.000Z",
+		"image": {
+			"id": "yPmEpKmnR",
+			"url": "https://cdn2.thecatapi.com/images/yPmEpKmnR.jpg"
+		}
+	},
+	{
+		"id": 232536088,
+		"user_id": "swqp91",
+		"image_id": "tSbM4vHB_",
+		"sub_id": null,
+		"created_at": "2025-06-09T19:28:13.000Z",
+		"image": {
+			"id": "tSbM4vHB_",
+			"url": "https://cdn2.thecatapi.com/images/tSbM4vHB_.png"
+		}
+	},
+	{
+		"id": 232536089,
+		"user_id": "swqp91",
+		"image_id": "TboUiIDUO",
+		"sub_id": null,
+		"created_at": "2025-06-09T19:28:14.000Z",
+		"image": {
+			"id": "TboUiIDUO",
+			"url": "https://cdn2.thecatapi.com/images/TboUiIDUO.jpg"
+		}
+	},
+	{
+		"id": 232536090,
+		"user_id": "swqp91",
+		"image_id": "xnzzM6MBI",
+		"sub_id": null,
+		"created_at": "2025-06-09T19:28:16.000Z",
+		"image": {
+			"id": "xnzzM6MBI",
+			"url": "https://cdn2.thecatapi.com/images/xnzzM6MBI.jpg"
+		}
+	},
+	{
+		"id": 232536091,
+		"user_id": "swqp91",
+		"image_id": "hBXicehMA",
+		"sub_id": null,
+		"created_at": "2025-06-09T19:28:46.000Z",
+		"image": {
+			"id": "hBXicehMA",
+			"url": "https://cdn2.thecatapi.com/images/hBXicehMA.jpg"
 		}
 	}
 ]

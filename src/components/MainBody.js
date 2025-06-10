@@ -35,17 +35,10 @@ const MainBody = ({choice}) =>{
                         favoritesResponse.json(),
                         randomResponse.json(),
                     ]);
-                    
-                    const updatedRandoms =randomData.map(randomItem => {
-                        const matched = favData.find(f => d.image_id === randomItem.id);
-                        if(matched){
-                            return { ...randomItem, 'favorite_id': matched.id };
-                        }
-                        return randomItem;
-                    })
+                
 
                     setFavorites(favData);
-                    setRandoms(updatedRandoms);
+                    setRandoms(randomData);
                     
                     setStatus('succeeded')
 
@@ -69,8 +62,13 @@ const MainBody = ({choice}) =>{
     }
     return(
         <>
-        <Random randoms={randoms} setFavorites={setFavorites} />
-         {/* {choice === 0 ? <Random favorites={favorites} setFavorites={setFavorites} /> : <Favorites favorites={favorites} setFavorites={setFavorites} />} */}
+        {/* <Random images={randoms} favorites={favorites} setFavorites={setFavorites} /> */}
+         {
+            choice === 0 ? 
+            <Random images={randoms} favorites={favorites} setFavorites={setFavorites} />
+            : 
+            <Favorites favorites={favorites} setFavorites={setFavorites} />
+        }
         </>
     ) 
 }

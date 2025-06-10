@@ -2,19 +2,17 @@ import Card from 'react-bootstrap/Card';
 import { Heart, HeartFill } from 'react-bootstrap-icons';
 import {useState, useEffect} from 'react';
 
-const ImgCard = ({catImg, favorites, setFavorites}) =>{
+const ImgCard = ({singleImg, favorites, setFavorites}) =>{
 
 
-    console.log(catImg.breeds[0].name);
-    console.log(catImg.id);
+    console.log(singleImg.breeds[0].name);
+    console.log(singleImg.id);
+    const [favItem, setFavItem] = useState(favorites.find(f=>f.image_id === singleImg.id));
 
-
-    const [fav, setFav] = useState(favorites.find(fav=>fav.image_id === catImg.id));
-   
     async function toggleFav(){
 
             try {
-                if(!fav){
+                if(!favItem){
                     const response = await fetch('https://api.thecatapi.com/v1/favourites', {
                         method: 'POST',
                         headers: {
@@ -23,25 +21,25 @@ const ImgCard = ({catImg, favorites, setFavorites}) =>{
                             'x-api-key': process.env.REACT_APP_CAT_API_KEY,
                             
                         },
-                        body: JSON.stringify({ "image_id": catImg.id})
+                        body: JSON.stringify({ "image_id": singleImg.id})
                         
                     });
                     const data = await response.json();
                     console.log(data);
                     
-                    const favData = {
+                    const newFav = {
                         "id": data.id,
-                        "image_id": catImg.id,
+                        "image_id": singleImg.id,
                         "image": {
-                            "id": catImg.id,
-                            "url": catImg.url
+                            "id": singleImg.id,
+                            "url": singleImg.url
                         }
                     }
-                    setFavorites([...favorites, favData]);
-                    setFav(davData);
+                    setFavorites(prevFavorites => [...prevFavorites, newFav]);
+                    setFavItem(newFav);
                 }
                 else{
-                    const response = await fetch(`https://api.thecatapi.com/v1/favourites/${fav.id}`, {
+                    const response = await fetch(`https://api.thecatapi.com/v1/favourites/${favItem.id}`, {
                         method: 'DELETE',
                         headers: {
                             'content-type': 'application/json',
@@ -50,9 +48,8 @@ const ImgCard = ({catImg, favorites, setFavorites}) =>{
                         
                     });
                     // const data = await response.json();
-                    setFavorites(favorites.filter(f=> f.image_id !== catImg.id));
-                    setFav(null);
-
+                    setFavorites(prevFavorites => prevFavorites.filter(fav => fav.id !== favItem.id));
+                    setFavItem(null);
                 }
                 
             } catch(error){
@@ -60,25 +57,22 @@ const ImgCard = ({catImg, favorites, setFavorites}) =>{
             }
         }
 
-    useEffect(() => {
-        const found = favorites.find(f => f.image_id === catImg.id);
-        setFav(found || null);
-    }, [favorites, catImg.id]);
+ 
     
     return(
         <Card>
-            <Card.Img variant="top" className="img_prop" src={catImg.url} />
+            <Card.Img variant="top" className="img_prop" src={singleImg.url} />
             <Card.Body>
                 <div className='title_wrapper'>
-                    <Card.Title >{catImg.breeds[0].name}</Card.Title>
-                    {fav ? 
+                    <Card.Title >{singleImg.breeds[0].name}</Card.Title>
+                    {favItem ? 
                         <HeartFill color="red" size={25} onClick={toggleFav}/> 
                         : 
                         <Heart color="red" size={25} onClick={toggleFav}/>}
                 </div>
                     
                 <Card.Text>
-                    {catImg.breeds[0].description}
+                    {singleImg.breeds[0].description}
                 </Card.Text>
                 
             </Card.Body>

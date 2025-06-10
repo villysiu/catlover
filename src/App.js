@@ -6,6 +6,7 @@ import React, { useState } from 'react';
 
 const App = () => {
   const [choice, setChoice] = useState(0);
+  
   return (
     <div className="App">
 

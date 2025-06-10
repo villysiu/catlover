@@ -2,14 +2,14 @@ import Card from 'react-bootstrap/Card';
 import { Heart, HeartFill } from 'react-bootstrap-icons';
 import {useState, useEffect} from 'react';
 
-const ImgCard = ({catImg, favs, setFavs}) =>{
+const ImgCard = ({catImg, favorites, setFavorites}) =>{
 
 
     console.log(catImg.breeds[0].name);
     console.log(catImg.id);
 
 
-    const [fav, setFav] = useState(favs.find(fav=>fav.image_id === catImg.id));
+    const [fav, setFav] = useState(favorites.find(fav=>fav.image_id === catImg.id));
    
     async function toggleFav(){
 
@@ -37,8 +37,8 @@ const ImgCard = ({catImg, favs, setFavs}) =>{
                             "url": catImg.url
                         }
                     }
-                    setFavs([...favs, favData]);
-                    favs.push(favData);
+                    setFavorites([...favorites, favData]);
+                    setFav(davData);
                 }
                 else{
                     const response = await fetch(`https://api.thecatapi.com/v1/favourites/${fav.id}`, {
@@ -50,7 +50,7 @@ const ImgCard = ({catImg, favs, setFavs}) =>{
                         
                     });
                     // const data = await response.json();
-                    setFavs(favs.filter(fav=> fav.image_id !== catImg.id));
+                    setFavorites(favorites.filter(f=> f.image_id !== catImg.id));
                     setFav(null);
 
                 }
@@ -61,9 +61,9 @@ const ImgCard = ({catImg, favs, setFavs}) =>{
         }
 
     useEffect(() => {
-        const found = favs.find(f => f.image_id === catImg.id);
+        const found = favorites.find(f => f.image_id === catImg.id);
         setFav(found || null);
-    }, [favs, catImg.id]);
+    }, [favorites, catImg.id]);
     
     return(
         <Card>

@@ -8,7 +8,7 @@ import Spinner from 'react-bootstrap/Spinner';
 const MainBody = ({choice}) =>{
 
     const [status, setStatus] = useState('idle');
-    const [favorites, setFavorties] = useState([]);
+    const [favorites, setFavorites] = useState([]);
     const [randoms, setRandoms] = useState([]);
 
     useEffect(()=>{
@@ -16,23 +16,36 @@ const MainBody = ({choice}) =>{
             async function fetchData(){
                 
                 try {
-                    const response = await fetch('https://api.thecatapi.com/v1/favourites', {
-                        headers: {
-                            'content-type': 'application/json',
-                            'x-api-key': process.env.REACT_APP_CAT_API_KEY,
-                        }
-                    });
-    
-                    setFavorites(await response.json());
+                    const [favoritesResponse, randomResponse] = await Promise.all([
+                        fetch('https://api.thecatapi.com/v1/favourites', {
+                            headers: {
+                                'content-type': 'application/json',
+                                'x-api-key': process.env.REACT_APP_CAT_API_KEY,
+                            },
+                        }),
+                        fetch('https://api.thecatapi.com/v1/images/search?limit=12&has_breeds=1', {
+                            headers: {
+                                'content-type': 'application/json',
+                                'x-api-key': process.env.REACT_APP_CAT_API_KEY,
+                            },
+                        }),
+                    ]);
 
-                    const response2 = await fetch('https://api.thecatapi.com/v1/images/search?limit=12&has_breeds=1', {
-                        headers: {
-                            'content-type': 'application/json',
-                            'x-api-key': process.env.REACT_APP_CAT_API_KEY,
-                        }
-                    });
+                    const [favData, randomData] = await Promise.all([
+                        favoritesResponse.json(),
+                        randomResponse.json(),
+                    ]);
                     
-                    setRandoms(await response2.json());
+                    const updatedRandoms =randomData.map(randomItem => {
+                        const matched = favData.find(f => d.image_id === randomItem.id);
+                        if(matched){
+                            return { ...randomItem, 'favorite_id': matched.id };
+                        }
+                        return randomItem;
+                    })
+
+                    setFavorites(favData);
+                    setRandoms(updatedRandoms);
                     
                     setStatus('succeeded')
 
@@ -46,7 +59,7 @@ const MainBody = ({choice}) =>{
             fetchData();
         }
         
-    }, [status])
+    }, [])
 
     if(status === 'idle' || status === 'loading'){
         return <Spinner />

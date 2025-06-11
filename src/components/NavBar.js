@@ -4,25 +4,16 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import {useState, useEffect, useRef} from 'react';
+import {useState} from 'react';
 const NavBar = ({setChoice}) => {
 
   const [show, setShow] = useState(false);
-  const ref = useRef();
+
   const handleClick = (choice) => {
     choice===1 ? setChoice(1) : setChoice(0);
     setShow(false);
   } 
 
-  // const handleClickOutside = e =>{
-  //   if(ref.current && !ref.current.contains(e.target)){
-  //     setShow(false);
-  //   }
-  // }
-
-  // useEffect(()=>{
-  //   document.addEventListener('click', )
-  // })
   return (
     <Navbar expand="sm" className="bg-body-tertiary" fixed="top" onMouseLeave={()=>setShow(false)}>
       <Container fluid>

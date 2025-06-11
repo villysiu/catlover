@@ -61,7 +61,7 @@ const ImgCard = ({singleImg, favorites, setFavorites}) =>{
     
     return(
         <Card>
-            <Card.Img variant="top" className="img_prop" src={singleImg.url} />
+            <Card.Img variant="top" className="img_prop" src={singleImg.url} alt={singleImg.id}/>
             <Card.Body>
                 <div className='title_wrapper'>
                     <Card.Title >{singleImg.breeds[0].name}</Card.Title>

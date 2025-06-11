@@ -71,7 +71,7 @@ const ImgCard = ({singleImg, favorites, setFavorites}) =>{
                         <Heart color="red" size={25} onClick={toggleFav}/>}
                 </div>
                     
-                <Card.Text>
+                <Card.Text className="text-start">
                     {singleImg.breeds[0].description}
                 </Card.Text>
                 

@@ -4,32 +4,41 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-
+import {useState, useEffect, useRef} from 'react';
 const NavBar = ({setChoice}) => {
+
+  const [show, setShow] = useState(false);
+  const ref = useRef();
+  const handleClick = (choice) => {
+    choice===1 ? setChoice(1) : setChoice(0);
+    setShow(false);
+  } 
+
+  // const handleClickOutside = e =>{
+  //   if(ref.current && !ref.current.contains(e.target)){
+  //     setShow(false);
+  //   }
+  // }
+
+  // useEffect(()=>{
+  //   document.addEventListener('click', )
+  // })
   return (
-    <Navbar expand="lg" className="bg-body-tertiary" fixed="top">
+    <Navbar expand="sm" className="bg-body-tertiary" fixed="top" onMouseLeave={()=>setShow(false)}>
       <Container fluid>
         <Navbar.Brand href="#">Cat Lovers</Navbar.Brand>
-        <Navbar.Toggle aria-controls="navbarScroll" />
-        <Navbar.Collapse id="navbarScroll">
+        <Navbar.Toggle aria-controls="navbarScroll" onClick={()=>setShow(!show)}/>
+        <Navbar.Collapse id="navbarScroll" in={show}>
           <Nav
             className="me-auto my-2 my-lg-0"
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link onClick={()=>setChoice(0)}>Home</Nav.Link>
-            <Nav.Link onClick={()=>setChoice(1)}>Favorites</Nav.Link>
+            <Nav.Link onClick={()=>handleClick(0)}>Home</Nav.Link>
+            <Nav.Link onClick={()=>handleClick(1)}>Favorites</Nav.Link>
             
           </Nav>
-          <Form className="d-flex">
-            <Form.Control
-              type="search"
-              placeholder="Search"
-              className="me-2"
-              aria-label="Search"
-            />
-            <Button variant="outline-success">Search</Button>
-          </Form>
+          
         </Navbar.Collapse>
       </Container>
     </Navbar>

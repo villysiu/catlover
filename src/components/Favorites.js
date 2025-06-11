@@ -1,32 +1,19 @@
-import ImgCard from './ImgCard'
+import FavCard from './FavCard'
 import { Row, Col } from 'react-bootstrap';
 import {useState} from 'react';
 
-const Favorites = () => {
+const Favorites = ({favorites, setFavorites}) => {
     
-    const [favorites, setFavorites] = useState([]);
-
-    // async function getImages()
-    // {
-    //     setFavorites([]);
-    //     try {
-    //         const response = await fetch('https://api.thecatapi.com/v1/images/search?limit=3&has_breeds=1', {
-    //             headers: {
-    //                 'content-type': 'application/json',
-    //                 'x-api-key': process.env.CAT_API_KEY,
-    //             }
-    //         });
-    //         const data = await response.json();
-    //         setImages(data);
-
-    //     }
-    // }
     return(
 
     <Row>
-        <Col>
-            <ImgCard />
-        </Col>
+         {favorites.map(singleFav =>{
+            return (
+                <Col key={singleFav.id} xs={12} md={4} className="mb-3">
+                    <FavCard singleFav={singleFav}  setFavorites={setFavorites} />
+                </Col>
+            )
+        })}
     </Row>
     )
 }

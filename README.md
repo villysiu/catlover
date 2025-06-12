@@ -2,6 +2,10 @@
 
 https://github.com/villysiu/catlover.git
 
+
+[![Watch the demo](https://i9.ytimg.com/vi_webp/L3RAgixBC3Y/mq2.webp?sqp=CLCSrcIG-oaymwEmCMACELQB8quKqQMa8AEB-AGGCIAC0AWKAgwIABABGGUgWChNMA8=&rs=AOn4CLBtEYVx1WtcchESeRAM_eaAkkOVoA)](https://youtu.be/L3RAgixBC3Y)
+
+
 ## About the Project
 
 This project fetches images from [TheCatApi](https://thecatapi.com/). Users can click the heart icon to favorite cat images.  

@@ -8,7 +8,7 @@ https://github.com/villysiu/catlover.git
 
 ## About the Project
 
-This project fetches images from [TheCatApi](https://thecatapi.com/). Users can click the heart icon to favorite cat images.  
+This project fetches images from [TheCatApi](https://thecatapi.com/). Users can click the heart icon to add/remove cat images to/from favorites.  
 We are displaying results from two API endpoints:
 
 - `https://api.thecatapi.com/v1/images/search?limit=12&has_breeds=1`  
@@ -17,6 +17,15 @@ We are displaying results from two API endpoints:
 - `https://api.thecatapi.com/v1/favourites`  
   Retrieves all cat images favorited by the user.
 
+- POST `https://api.thecatapi.com/v1/favourites` with 
+  ```
+  var rawBody = JSON.stringify({ 
+  "image_id": "id-of-image-to-favourite",
+  "sub_id":"user-123"
+  });
+  ```
+
+- DELETE `https://api.thecatapi.com/v1/favourites/:favouriteId`
 
 ## Prerequisites
 

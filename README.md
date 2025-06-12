@@ -18,6 +18,8 @@ We are displaying results from two API endpoints:
 
 - Ensure **Git** is installed on your machine.  
 - Ensure **Visual Studio Code (VS Code)** is installed.
+- Ensure **Node.js** is installed.
+- Ensure **npm/yarn** is installed.
 
 
 

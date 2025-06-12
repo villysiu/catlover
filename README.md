@@ -73,17 +73,13 @@ This project requires your personal **Cat API** key.
 1. In the **root directory** of the project (same level as `package.json`), create a file named:
 
 ```
-
 .env
-
 ```
 
 2. Add your API key to the `.env` file using the following format:
 
 ```
-
 REACT_APP_CAT_API_KEY=live_T941o...
-
 ````
 
 > **Important:** The key must start with `REACT_APP_` prefix for React App to access it.

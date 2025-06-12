@@ -1,70 +1,96 @@
-# Getting Started with Create React App
+# Cat Lovers
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+https://github.com/villysiu/catlover.git
 
-## Available Scripts
+## About the Project
 
-In the project directory, you can run:
+This project fetches images from [TheCatApi](https://thecatapi.com/). Users can click the heart icon to favorite cat images.  
+We are displaying results from two API endpoints:
 
-### `npm start`
+- `https://api.thecatapi.com/v1/images/search?limit=12&has_breeds=1`  
+  Fetches 12 cat images that include breed information.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- `https://api.thecatapi.com/v1/favourites`  
+  Retrieves all cat images favorited by the user.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## Prerequisites
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Ensure **Git** is installed on your machine.  
+- Ensure **Visual Studio Code (VS Code)** is installed.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Copy the Git repository URL:  
+   `https://github.com/villysiu/catlover.git`
 
-### `npm run eject`
+2. In VS Code:
+   - Click the **Source Control** icon <img src="https://raw.githubusercontent.com/villysiu/catlover/926bfee8ce1b7b55e4f003f01c950dee0f55c43c/public/images/source-control-svgrepo-com.svg" height="15" width="15"> in the sidebar.
+   - Click ![Clone Icon](https://github.com/villysiu/catlover/blob/main/public/images/clone-repository-blue.png?raw=true)
+   - Paste the repository URL:  
+     `https://github.com/villysiu/catlover.git`  
+     ![Paste URL](https://github.com/villysiu/catlover/blob/main/public/images/clone-gray.png?raw=true)
+   - Click **Clone from URL**.
+   - Choose a local folder where the repository will be cloned.
+   - When prompted, open the cloned repository:
+     - Go to **File > Open Folder...** and select the cloned folder.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Obtain an API Key
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+This project requires your personal **Cat API** key.
 
-## Learn More
+1. Sign up at [https://thecatapi.com/signup](https://thecatapi.com/signup).
+2. Enter your email address to get free or premium access.
+3. Check your inbox for an email with the subject line:  
+   **🐈 Welcome to The Cat API!**  
+   *(Check your spam folder if you don’t see it.)*
+4. Your API key should look like this:  
+   `live_T941odOy4hS460HfhmmTsDmaZPsmN9fwsI...`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+## Store and Use the API Key
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+1. In the **root directory** of the project (same level as `package.json`), create a file named:
 
-### Analyzing the Bundle Size
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+.env
 
-### Making a Progressive Web App
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+2. Add your API key to the `.env` file using the following format:
 
-### Advanced Configuration
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+REACT_APP_CAT_API_KEY=live_T941o...
 
-### Deployment
+````
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+> **Important:** The key must start with `REACT_APP_` prefix for React App to access it.
 
-### `npm run build` fails to minify
+3. To keep your API key secure and private, ensure `.env` is listed in your `.gitignore` file.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Install bootstrap, react-bootstrap and react bootstrap icon
+In the terminal, run:
+```bash
+npm install 
+````
+
+## Run the Project
+
+
+In the terminal, run:
+
+```bash
+npm start
+````
+
+This will start the development server and open the project at:
+[http://localhost:3000](http://localhost:3000)
+
+

@@ -1,12 +1,8 @@
 import ImgCard from './ImgCard'
 import { Row, Col } from 'react-bootstrap';
 
-
 const Random = ({images, favorites, setFavorites}) => {
 
-    console.log("random");
-
-    
     return(
         <>
             

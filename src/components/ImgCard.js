@@ -1,13 +1,13 @@
 import {Card, Spinner} from 'react-bootstrap';
 
 import { Heart, HeartFill } from 'react-bootstrap-icons';
-import {useState, useEffect} from 'react';
+import {useState} from 'react';
 
 const ImgCard = ({singleImg, favorites, setFavorites}) =>{
 
 
-    console.log(singleImg.breeds[0].name);
-    console.log(singleImg.id);
+    // console.log(singleImg.breeds[0]?.name);
+    // console.log(singleImg.id);
     const [favItem, setFavItem] = useState(favorites.find(f=>f.image_id === singleImg.id));
     const [loading, setLoading] = useState(false);
 

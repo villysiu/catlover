@@ -1,4 +1,5 @@
-import Card from 'react-bootstrap/Card';
+import {Card, Spinner} from 'react-bootstrap';
+
 import { Heart, HeartFill } from 'react-bootstrap-icons';
 import {useState, useEffect} from 'react';
 
@@ -8,9 +9,10 @@ const ImgCard = ({singleImg, favorites, setFavorites}) =>{
     console.log(singleImg.breeds[0].name);
     console.log(singleImg.id);
     const [favItem, setFavItem] = useState(favorites.find(f=>f.image_id === singleImg.id));
+    const [loading, setLoading] = useState(false);
 
     async function toggleFav(){
-
+            setLoading(true);
             try {
                 if(!favItem){
                     const response = await fetch('https://api.thecatapi.com/v1/favourites', {
@@ -37,6 +39,7 @@ const ImgCard = ({singleImg, favorites, setFavorites}) =>{
                     }
                     setFavorites(prevFavorites => [...prevFavorites, newFav]);
                     setFavItem(newFav);
+                    
                 }
                 else{
                     const response = await fetch(`https://api.thecatapi.com/v1/favourites/${favItem.id}`, {
@@ -55,12 +58,20 @@ const ImgCard = ({singleImg, favorites, setFavorites}) =>{
             } catch(error){
                 console.log(error);
             }
+            setLoading(false);
         }
 
  
     
     return(
-        <Card>
+        <>
+        
+        <Card style={{'position': 'relative'}}>
+            {loading && 
+            <div className="overlay">
+                <Spinner />
+            </div>
+        }
             <Card.Img variant="top" className="img_prop" src={singleImg.url} alt={singleImg.id}/>
             <Card.Body>
                 <div className='title_wrapper'>
@@ -77,6 +88,7 @@ const ImgCard = ({singleImg, favorites, setFavorites}) =>{
                 
             </Card.Body>
         </Card>
+        </>
     )
 }
 export default ImgCard;
